@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ephemeral Echoes - Book Cover</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #2d2d2d;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .book-cover {
+      position: relative;
+      width: 300px;
+      height: 450px;
+      background: linear-gradient(to bottom, #0b4e6b, #195e7a);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .hourglass {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 300px;
+      background: linear-gradient(to bottom, #ffcc00, #ff6600);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+      z-index: 1;
+      filter: brightness(1.2);
+    }
+
+    .hourglass::before,
+    .hourglass::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 100%;
+      background-color: #033862;
+      z-index: 2;
+    }
+
+    .hourglass::before {
+      transform: translateX(-100%);
+    }
+
+    .hourglass::after {
+      transform: translateX(100%);
+    }
+
+    .smoke {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: #f5f5f5;
+      border-radius: 50%;
+      z-index: 3;
+      opacity: 0.8;
+      animation: smokeAnimation 5s infinite alternate;
+    }
+
+    @keyframes smokeAnimation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.4;
+      }
+    }
+
+    .title {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="book-cover">
+    <div class="hourglass"></div>
+    <div class="smoke"></div>
+    <h2 class="title">Ephemeral Echoes</h2>
+  </div>
+
+</body>
+</html>
